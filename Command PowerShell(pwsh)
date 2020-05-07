@@ -1,0 +1,83 @@
+Comandos simples para atualizar o console da Azure no PWSH
+
+Quando estiver dentro do seu PWSH
+
+PS > Get-InstalledModule -Name Az -AllVersions | select Name, Version
+
+Name Version
+---- -------
+Az   3.7.0
+
+
+O comando abaixo atualiza a versão do seu modulo do Azure no PowerShell 
+
+PS > Install-Module -Name Az -AllowClobber -Scope CurrentUser -Force
+
+Aguardar até o fim da atualização.
+
+PS > Get-InstalledModule -Name Az -AllVersions | select Name, Version
+
+Name Version
+---- -------
+Az   3.8.0
+Az   3.7.0
+
+Ver sua Subscription 
+
+PS > Get-AzSubscription
+
+Name               Id                                   TenantId                             State
+----               --                                   --------                             -----
+CursoAZ-Free Trial 1bb20a27-ba3a-47bc-a7a6-a70227ab8b3c affd3955-9f87-48a7-8b82-8bf0b23f587f Disabled
+
+Conectar em uma nova Subscription 
+
+PS > Connect-AzAccount
+
+Será exibido um link para você acessar no seu navegador e um codigo, cole o endereço no navegador e também o codigo que 
+aparece, confirme sua conta da Azure e pronto estará conectado.
+
+Execute o comando anterior e verá sua subscription.
+
+=========================================================
+
+Criando diversos recursos pelo PWSH
+
+
+Comando para ver as localidades 
+
+PS > Get-AzLocation 
+
+Criar um ResourceGroup
+
+PS > New-AzResourceGroup -Name nome-do-seu-RG -Location Location desejada 
+
+Criar uma VM com diversos atributos
+
+PS > New-AzVM -ResourceGroupName "RG-pwsh" -Name "pwsh-vm" -Location "EastUS" -VirtualNetworkName "vnet-pwsh" \ 
+-SubnetName "sub-pwsh" -SecurityGroupName "NSG-pwsh" -PublicIpAddressName "myip-pwsh" -OpenPorts 80,443,3389
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
