@@ -57,6 +57,17 @@ Criar uma VM com diversos atributos
 PS > New-AzVM -ResourceGroupName "RG-pwsh" -Name "pwsh-vm" -Location "EastUS" -VirtualNetworkName "vnet-pwsh" \ 
 -SubnetName "sub-pwsh" -SecurityGroupName "NSG-pwsh" -PublicIpAddressName "myip-pwsh" -OpenPorts 80,443,3389
 
+Parando uma VM 
+
+PS > Stop-AzVM -ResourceGroupName "RG-pwsh" -Name "pwsh-vm"
+
+Iniciando uma VM
+
+PS > Start-AzVM -ResourceGroupName "RG-pwsh" -Name "pwsh-vm"
+
+
+
+
 
 
 
