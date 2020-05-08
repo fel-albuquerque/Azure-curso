@@ -1,4 +1,3 @@
 # Azure-curso
 
-Comando do curso realizado da Azure, erros que aconteceu durante o processo de aprendizagem e coisas uteis para se utilizar 
-no PowerShell e no dentro do Console da Azure.
+Comandos que realizei durante o curso da Azure,coisas uteis para utilização no PowerShell e também dentro do console da Azure.
